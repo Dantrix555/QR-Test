@@ -8,7 +8,7 @@
 
  After that you can use zxing to create or generate your qr codes, for example:
 
- ...
+ ```C#
  using ZXing;
  using System;
  using UnityEngine;
@@ -56,7 +56,7 @@
     }
  }
  
- ...
+```
 
  In the previous example is shown an implementation of zxing inside a QR generator C# Script.
 
@@ -68,7 +68,7 @@
 * You need to create a custom Android manifest file. To do this you can go to top menu "Edit/Project Settings/Player Settings/Publishing Settings" and check "Custom Main Manifest". After doing that in your project will appear an android folder inside your plugins folder.
 
 * Go to the Android folder inside plugins folder and open AndroidManifest.xml, update your code with something like this:
-...
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -86,11 +86,11 @@
     </application>
 <uses-permission android:name="android.permission.CAMERA"/>
 </manifest>
-...
+```
 
 * A good practice in unity when you're using Android permissions it's to add a permission inside your code using Unity's android namespace (normally that permission is better to call it once in your code), an example code could be the following:
 
-...
+```C#
 using UnityEngine.Android;
 
 public class InitGameScript : MonoBehaviour
@@ -106,7 +106,7 @@ public class InitGameScript : MonoBehaviour
         #endif
     }
 }
-...
+```
 
 * As adittional tip to your Android implementation is to rotate your QR code Raw Image 270° in z axis, that's because for some reason when the apk is generated, the raw image (where you create or read your code) looks rotated.
 
